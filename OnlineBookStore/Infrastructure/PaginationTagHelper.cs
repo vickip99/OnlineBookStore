@@ -34,15 +34,21 @@ namespace OnlineBookStore.Infrastructure
         {
             if (ViewContext != null && PageModel != null) 
             {
+                 // Getting an instance of IUrlHelper to generate URLs
                 IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
+                // Creating a div tag to contain pagination links
                 TagBuilder result = new TagBuilder("div");
 
                 for (int i = 1; i<=PageModel.TotalPages; i++) 
                 {
+                    // Looping through each page in the PageModel
                     TagBuilder tag = new TagBuilder("a");
+
+                    // Creating an anchor tag for each page
                     tag.Attributes["href"]= urlHelper.Action(PageAction, new { pageNum = i });
 
+                    // Adding CSS classes to the anchor tag based on whether it's the current page or not
                     if (PageClassesEnabled)
                     {
                         tag.AddCssClass(PageClass);

@@ -14,6 +14,7 @@ namespace OnlineBookStore.Controllers
             _bookRepo = temp;
         }
 
+        //Retrieving books from the repository, ordering by BookId,skipping items based on the pageNum and pageSize, then taking pageSize items
         public IActionResult Index(int pageNum)
         {
             int pageSize = 10;
@@ -24,7 +25,8 @@ namespace OnlineBookStore.Controllers
                     .Skip((pageNum - 1) * pageSize)
                     .Take(pageSize),
 
-                PaginationInfo = new PaginationInfo
+            //Pagination to manage and display the data in smaller chunks or 10items per page               
+            PaginationInfo = new PaginationInfo
                 {
                     CurrentPage = pageNum,
                     ItemsPerPage = pageSize,
