@@ -6,13 +6,12 @@
 
 @model Book
 
-<div class="card card-body">
+<div class="card m-1 p-1">
 <h3>
     @Model.Title
-    <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.Price</small></span>
+    <span class="badge rounded-pill bg-primary text-white float-end"><small>$@Model.Price</small></span>
 </h3>
 
-<div>
 <ul>
     <li>ID: @Model.BookId</li>
     <li>Author: @Model.Author</li>
@@ -21,6 +20,6 @@
     <li>Classification: @Model.Classification</li>
     <li>Category: @Model.Category</li>
     <li>Page Count: @Model.PageCount</li>
-        <li>Price: @Model.Price</li>
+    <li>Price: @Model.Price</li>
 </ul>
 </div>
