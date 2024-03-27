@@ -7,18 +7,20 @@
 @model Book
 
 <div class="card card-body">
-    <h3>
-        @Model.Title
-        <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.Price</small></span>
-    </h3>
-    <ul>
-        <li>ID: @Model.BookId</li>
-        <li>Author: @Model.Author</li>
-        <li>Publisher: @Model.Publisher</li>
-        <li>ISBN: @Model.ISBN</li>
-        <li>Classification: @Model.Classification</li>
-        <li>Category: @Model.Category</li>
-        <li>Page Count: @Model.PageCount</li>
+<h3>
+    @Model.Title
+    <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.Price</small></span>
+</h3>
+
+<div>
+<ul>
+    <li>ID: @Model.BookId</li>
+    <li>Author: @Model.Author</li>
+    <li>Publisher: @Model.Publisher</li>
+    <li>ISBN: @Model.ISBN</li>
+    <li>Classification: @Model.Classification</li>
+    <li>Category: @Model.Category</li>
+    <li>Page Count: @Model.PageCount</li>
         <li>Price: @Model.Price</li>
-    </ul>
+</ul>
 </div>

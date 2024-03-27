@@ -2,19 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model ProjectListViewModel 
+@model ProjectListViewModel
 
-    <h1>ONLINE BOOKS</h1>
+<h1>ONLINE BOOKS</h1>
 
-
-    @foreach(Book b in Model.Books)
+<!-- Looping through each book in the Model.Books. Rendering a partial view named "ProjectSummary" for each book. The partial view is passed the current book model -->
+@foreach(Book b in Model.Books)
 {
-    <partial name="ProjectSummary" model="b"/>
-
+<partial name="ProjectSummary" model="b" />
 }
 
-<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
-    page-class-normal="btn-outline-dark" page-classes-selected="btn-primary" class="btn-group pull-right m-1"></div>
+<!-- Rendering a pagination control for navigating between pages of books -->
+<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>
 
 
 
